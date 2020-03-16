@@ -2,13 +2,24 @@
 #include <fstream>
 #include <string>
 #include "libs/User.h"
- 
-int main()
+
+void printList()
 {
     User user;
 
-    std::cout << user.user_count << std::endl;
-    std::cout << user.userVector[0] << std::endl;
+    user.printList();
+}
+ 
+int main(int argc, char *argv[])
+{
+
+    if(argc > 1){
+        if(std::string(argv[1]) == "list"){
+            printList();
+        }
+    }
+    
+    std::cout << "Enter command" << std::endl;
 
     return 0;
 }

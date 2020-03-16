@@ -2,6 +2,12 @@
 #define USER_H
 #include <vector>
 
+struct UserData
+{
+    std::string name;
+    std::string id;
+};
+
 class User 
 {
 
@@ -13,7 +19,13 @@ class User
         User();
         
         void getUsers();
+
+        UserData setSingleUserData(std::string userData);
+
+        void printList();
+        
     
 };
+
 
 #endif
