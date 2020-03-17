@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "libs/User.h"
+#include "libs/Params.h"
 
 void printList()
 {
@@ -12,6 +13,7 @@ void printList()
  
 int main(int argc, char *argv[])
 {
+    Params params(argc, argv);
 
     if(argc > 1){
         if(std::string(argv[1]) == "list"){
