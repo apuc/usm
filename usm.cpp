@@ -15,8 +15,10 @@ int main(int argc, char *argv[])
 {
     Params params(argc, argv);
 
-    if(argc > 1){
-        if(std::string(argv[1]) == "list"){
+    std::cout << params.hasFlag("--all") << std::endl;
+
+    if(params.type == "user"){
+        if(params.command == "list"){
             printList();
         }
     }

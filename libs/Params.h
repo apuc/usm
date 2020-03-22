@@ -9,13 +9,15 @@ class Params
     public:
         int argc;
 
+        std::vector<std::string> argv;
+
         std::string type;
 
         std::string command;
 
-        Params(int argc, char* argv[]);
+        Params(int argc, char *argv[]);
 
-        std::string getType(char* argv[]);
+        std::string getType();
 
         std::string getCommand();
 
@@ -23,7 +25,9 @@ class Params
 
         bool isUser();
 
-        bool hasFlag();
+        bool hasFlag(std::string flsg);
+
+        void setArgv(char *argv[]);
 
 };
 
