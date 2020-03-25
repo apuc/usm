@@ -21,11 +21,15 @@ class Params
 
         std::string getCommand();
 
+        std::string getParam(std::string name);
+
         bool isGroup();
 
         bool isUser();
 
         bool hasFlag(std::string flsg);
+
+        bool hasParam(std::string param);
 
         void setArgv(char *argv[]);
 

@@ -6,7 +6,8 @@ struct UserData
 {
     std::string name;
     std::string id;
-};
+    std::string homePath;
+};  
 
 class User 
 {
@@ -22,9 +23,13 @@ class User
 
         UserData setSingleUserData(std::string userData);
 
-        void printList();
+        UserData getById(int id);
+
+        UserData getByName(std::string name);
+
+        void printList(bool all);
         
-    
+        void printUser(UserData user);
 };
 
 

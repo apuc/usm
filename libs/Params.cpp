@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 #include "Params.h"
 
 Params::Params(int argc, char *argv[])
@@ -47,6 +48,42 @@ bool Params::hasFlag(std::string flag)
         }
     }
     return false;
+}
+
+bool Params::hasParam(std::string param)
+{
+    for(int i = 0; i < argv.size(); i++){
+        size_t pos = argv[i].find(param);
+        if (pos != std::string::npos){
+            return true;
+        }
+    }
+    return false;
+}
+
+std::string Params::getParam(std::string name)
+{
+    for(int i = 0; i < argv.size(); i++){
+        const char delim = '=';
+ 
+        std::vector<std::string> elems;
+    
+        std::stringstream ss(argv[i]);
+        std::string item;
+        while(std::getline(ss, item, delim))
+        {
+            elems.push_back(item);
+        }
+
+        if(elems[0] == name){
+            if(elems.size() > 1){
+                return elems[1];
+            }
+            
+        }
+    }
+
+    return "";
 }
 
 void Params::setArgv(char *argv[])
