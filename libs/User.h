@@ -5,8 +5,12 @@
 struct UserData
 {
     std::string name;
+    std::string pass;
     std::string id;
+    std::string groupId;
+    std::string group;
     std::string homePath;
+    std::string shell;
 };  
 
 class User 
@@ -30,6 +34,17 @@ class User
         void printList(bool all);
         
         void printUser(UserData user);
+
+        void saveUsers();
+
+        bool edit(int id, std::string param, std::string value);
+
+        bool issetId(int id);
+
+        std::string userDataToString(UserData ud);
+
+    // private:
+    //     std::string userDataToString(UserData ud);
 };
 
 

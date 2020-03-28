@@ -46,6 +46,11 @@ int main(int argc, char *argv[])
 {
     Params params(argc, argv);
 
+    // User user;
+    // bool isset = user.issetId(1001);
+    // user.edit(1000, "name", "kirill321");
+    // user.edit(1000, "homePath", "/home/kirill321");
+
     // getUserById(1001);
 
     if(params.type == "user"){
